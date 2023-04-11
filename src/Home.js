@@ -1,22 +1,16 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
-    // let name = 'Arif';
-    const [name, setName] = useState('Arif');
-    const [age, setAge] = useState('24');
-
-    const handleClick = () => {
-        setName('Akib');
-        setAge(18);
-        
-    }
+    const [blogs, setBlogs] = useState([
+        { title: 'My new website', body: 'lorem ipsum...', author: 'Arif', id: 1 },
+        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Akib', id: 2 },
+        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Arbin', id: 3 }
+      ]);
     
-
     return ( 
         <div className="home">
-            <h2>Home Page</h2>
-            <p>{name} is {age} years old.</p>
-            <button onClick={handleClick}>Click Me</button>
+           <BlogList blogs={blogs} title="All Blogs!" />
             
         </div>
      );
